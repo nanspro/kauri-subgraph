@@ -11,7 +11,7 @@ type Article @entity {
   title: String!
   author: String!
   createdAt: BigInt!
-  # tags: String!
+  tags: [String!]!
   attributes: Attribute!
 }
 

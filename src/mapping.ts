@@ -50,13 +50,15 @@ export function handleArticlesCheckpointed(event: ArticlesCheckpointed): void {
           let title = data.get('title')
           let content = data.get('content')
           let tagArray = data.get('tags').toArray()
-          let tag = tagArray[0].toString()
+          let tags: string[]
           let author = data.get('author').toString()
-
-          // var tags: string
-          // tagArray.forEach(function(item) {
-            // tags = tags + item.toString() + ' '
-          // })
+          
+          for (let i = 0; i < tagArray.length; i++) {
+            let tag = tagArray[i]
+            if (tag !== null){
+              tags.push(tag.toString())
+            }
+          }
           author = '0x' + author
           let timestamp = data.get('timestamp')
           log.info("Content Title is: {}", [title.toString()])
@@ -64,13 +66,13 @@ export function handleArticlesCheckpointed(event: ArticlesCheckpointed): void {
           log.info("Author is: {}", [author.toString()])
           log.info("Created at: {}", [timestamp.toBigInt().toString()])
           log.info("Tags array: {}", [tagArray[0].toString()])
-          log.info("One of the tags is: {}", [tag])
+          log.info("One of the tags is: {}", [tags[0]])
 
           entity2.content = content.toString()
           entity2.title = title.toString()
           entity2.author = author.toString()
           entity2.createdAt = timestamp.toBigInt()
-          // entity2.tags = tags
+          entity2.tags = tags
 
           let attributes = data.get('attributes').toObject()
           let originName = attributes.get('origin_name')
