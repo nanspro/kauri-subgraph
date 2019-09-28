@@ -1,0 +1,15 @@
+type Checkpoint @entity {
+  id: ID!
+  ipfsHash: String!
+  merkleRoot: Bytes! # bytes32
+  # contentHash: [String!]
+}
+
+type Article @entity {
+  id: ID!
+  ipfsHash: String!
+  content: String!
+  title: String!
+  author: String!
+  createdAt: BigInt!
+}

@@ -1,0 +1,481 @@
+[
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_checkpointRoot", "type": "bytes32" },
+      { "name": "_checkpointDocumentLocator", "type": "string" },
+      { "name": "_v", "type": "uint8" },
+      { "name": "_r", "type": "bytes32" },
+      { "name": "_s", "type": "bytes32" }
+    ],
+    "name": "checkpointArticles",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_requestId", "type": "bytes32" },
+      { "name": "_articleId", "type": "bytes32" },
+      { "name": "_articleVersion", "type": "uint256" },
+      { "name": "_contentHash", "type": "string" },
+      { "name": "_creatorAddress", "type": "address" },
+      { "name": "_timestamp", "type": "uint256" },
+      { "name": "_checkpointRoot", "type": "bytes32" },
+      { "name": "_articleProof", "type": "bytes32[]" },
+      { "name": "_v", "type": "uint8" },
+      { "name": "_rAndS", "type": "bytes32[]" }
+    ],
+    "name": "fulfilRequest",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_maxDeadlineDuration", "type": "uint64" }],
+    "name": "setMaxDeadlineDuration",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_id", "type": "bytes32" },
+      { "name": "_newContentHash", "type": "bytes32" }
+    ],
+    "name": "updateRequest",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_address", "type": "address" }],
+    "name": "setFundsContractAddress",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "adminControllerAddress", "type": "address" }],
+    "name": "setAdminController",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_checkpointerAddress", "type": "address" }],
+    "name": "addCheckpointerAddress",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_contractAddress", "type": "address" }],
+    "name": "setCommunityContractAddress",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "minDeadlineDuration",
+    "outputs": [{ "name": "", "type": "uint64" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_storageContract", "type": "address" }],
+    "name": "setStorageContractAddress",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "maxDeadlineDuration",
+    "outputs": [{ "name": "", "type": "uint64" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "remoteAdminController",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "functionCode", "type": "uint256" },
+      { "name": "caller", "type": "address" }
+    ],
+    "name": "canAdminister",
+    "outputs": [{ "name": "", "type": "bool" }],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_publicationTimeout", "type": "uint64" }],
+    "name": "setPublicationTimeout",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_minDeadlineDuration", "type": "uint64" }],
+    "name": "setMinDeadlineDuration",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "publicationTimeout",
+    "outputs": [{ "name": "", "type": "uint64" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_requestId", "type": "bytes32" }],
+    "name": "refundRequest",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_id", "type": "bytes32" }],
+    "name": "startWorkOnRequest",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_id", "type": "bytes32" }],
+    "name": "cancelWorkOnRequest",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_articleId", "type": "bytes32" },
+      { "name": "_articleVersion", "type": "uint256" },
+      { "name": "_contentHash", "type": "string" },
+      { "name": "_creatorAddress", "type": "address" },
+      { "name": "_timestamp", "type": "uint256" },
+      { "name": "_tipAmount", "type": "uint256" },
+      { "name": "_checkpointRoot", "type": "bytes32" },
+      { "name": "_articleProof", "type": "bytes32[]" }
+    ],
+    "name": "tipArticle",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getStorageContractAddress",
+    "outputs": [{ "name": "", "type": "address" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "maxContributions",
+    "outputs": [{ "name": "", "type": "uint64" }],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_maxContributions", "type": "uint64" }],
+    "name": "setMaxContributions",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_id", "type": "bytes32" },
+      { "name": "_contentHash", "type": "bytes32" },
+      { "name": "_community", "type": "bytes32" },
+      { "name": "_deadline", "type": "uint64" },
+      { "name": "_bountyAmount", "type": "uint256" }
+    ],
+    "name": "addRequest",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_articleId", "type": "bytes32" },
+      { "name": "_articleVersion", "type": "uint256" },
+      { "name": "_contentHash", "type": "string" },
+      { "name": "_creatorAddress", "type": "address" },
+      { "name": "_timestamp", "type": "uint256" },
+      { "name": "_checkpointRoot", "type": "bytes32" },
+      { "name": "_articleProof", "type": "bytes32[]" }
+    ],
+    "name": "validateArticleProof",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      { "name": "_id", "type": "bytes32" },
+      { "name": "_bountyAmount", "type": "uint256" }
+    ],
+    "name": "addToBounty",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [{ "name": "_newOwner", "type": "address" }],
+    "name": "transferOwnership",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [{ "name": "_id", "type": "bytes32" }],
+    "name": "getRequest",
+    "outputs": [
+      { "name": "bountyTotal", "type": "uint256" },
+      { "name": "status", "type": "uint8" },
+      { "name": "requestCreator", "type": "address" },
+      { "name": "requestFlaggedCount", "type": "uint256" }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "name": "_maxContributions", "type": "uint64" },
+      { "name": "_publicationTimeout", "type": "uint64" },
+      { "name": "_minDeadlineDuration", "type": "uint64" },
+      { "name": "_maxDeadlineDuration", "type": "uint64" }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  { "payable": true, "stateMutability": "payable", "type": "fallback" },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "articleId", "type": "bytes32" },
+      { "indexed": true, "name": "requestId", "type": "bytes32" },
+      { "indexed": true, "name": "creator", "type": "address" },
+      { "indexed": false, "name": "articleVersion", "type": "uint256" },
+      { "indexed": false, "name": "contentHash", "type": "string" },
+      { "indexed": false, "name": "moderator", "type": "address" }
+    ],
+    "name": "RequestFulfilled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "articleId", "type": "bytes32" },
+      { "indexed": true, "name": "creator", "type": "address" },
+      { "indexed": false, "name": "articleVersion", "type": "uint256" },
+      { "indexed": false, "name": "tipper", "type": "address" },
+      { "indexed": false, "name": "tipAmount", "type": "uint256" }
+    ],
+    "name": "ArticleTipped",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "id", "type": "bytes32" },
+      { "indexed": true, "name": "creator", "type": "address" }
+    ],
+    "name": "RequestRefunded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "requestId", "type": "bytes32" },
+      { "indexed": true, "name": "articleId", "type": "bytes32" },
+      { "indexed": true, "name": "acceptedCreator", "type": "address" },
+      { "indexed": false, "name": "bountyTotal", "type": "uint256" }
+    ],
+    "name": "RequestBountyPaidOut",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "id", "type": "bytes32" },
+      { "indexed": false, "name": "contentHash", "type": "bytes32" }
+    ],
+    "name": "RequestUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "topic", "type": "bytes32" },
+      { "indexed": true, "name": "creator", "type": "address" },
+      { "indexed": false, "name": "id", "type": "bytes32" },
+      { "indexed": false, "name": "contentHash", "type": "bytes32" }
+    ],
+    "name": "RequestCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "requestId", "type": "bytes32" },
+      { "indexed": false, "name": "contributorAddress", "type": "address" }
+    ],
+    "name": "RequestFlagged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "requestId", "type": "bytes32" },
+      { "indexed": false, "name": "contributorAddress", "type": "address" }
+    ],
+    "name": "RequestUnflagged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": true, "name": "requestId", "type": "bytes32" }],
+    "name": "RequestReset",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": false, "name": "theHash", "type": "bytes32" }],
+    "name": "ArticleHash",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "checkpointRoot", "type": "bytes32" },
+      {
+        "indexed": false,
+        "name": "checkpointDocumentLocator",
+        "type": "string"
+      },
+      { "indexed": false, "name": "instigator", "type": "address" }
+    ],
+    "name": "ArticlesCheckpointed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": false, "name": "checkpointerAddress", "type": "address" }
+    ],
+    "name": "CheckpointerAddressAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "requestId", "type": "bytes32" },
+      { "indexed": true, "name": "contributor", "type": "address" },
+      { "indexed": false, "name": "addedAmount", "type": "uint256" },
+      { "indexed": false, "name": "newTotal", "type": "uint256" }
+    ],
+    "name": "BountyAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [{ "indexed": true, "name": "previousOwner", "type": "address" }],
+    "name": "OwnershipRenounced",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      { "indexed": true, "name": "previousOwner", "type": "address" },
+      { "indexed": true, "name": "newOwner", "type": "address" }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  }
+]

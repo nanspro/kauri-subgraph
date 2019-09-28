@@ -1,0 +1,65 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Contract
+    network: rinkeby
+    source:
+      address: "0x316c2642Ca4130E448b2db70f3dA85b3b4A9Ceb8"
+      abi: Contract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        # - RequestFulfilled
+        # - ArticleTipped
+        # - RequestRefunded
+        # - RequestBountyPaidOut
+        # - RequestUpdated
+        # - RequestCreated
+        # - RequestFlagged
+        # - RequestUnflagged
+        # - RequestReset
+        # - ArticleHash
+        - ArticlesCheckpointed
+        # - CheckpointerAddressAdded
+        # - BountyAdded
+        # - OwnershipRenounced
+        # - OwnershipTransferred
+      abis:
+        - name: Contract
+          file: ./abis/Contract.json
+      eventHandlers:
+        # - event: RequestFulfilled(indexed bytes32,indexed bytes32,indexed address,uint256,string,address)
+        #   handler: handleRequestFulfilled
+        # - event: ArticleTipped(indexed bytes32,indexed address,uint256,address,uint256)
+        #   handler: handleArticleTipped
+        # - event: RequestRefunded(indexed bytes32,indexed address)
+        #   handler: handleRequestRefunded
+        # - event: RequestBountyPaidOut(indexed bytes32,indexed bytes32,indexed address,uint256)
+        #   handler: handleRequestBountyPaidOut
+        # - event: RequestUpdated(indexed bytes32,bytes32)
+        #   handler: handleRequestUpdated
+        # - event: RequestCreated(bytes32,indexed address,bytes32,bytes32)
+        #   handler: handleRequestCreated
+        # - event: RequestFlagged(indexed bytes32,address)
+        #   handler: handleRequestFlagged
+        # - event: RequestUnflagged(indexed bytes32,address)
+        #   handler: handleRequestUnflagged
+        # - event: RequestReset(indexed bytes32)
+        #   handler: handleRequestReset
+        # - event: ArticleHash(bytes32)
+        #   handler: handleArticleHash
+        - event: ArticlesCheckpointed(bytes32,string,address)
+          handler: handleArticlesCheckpointed
+        # - event: CheckpointerAddressAdded(address)
+        #   handler: handleCheckpointerAddressAdded
+        # - event: BountyAdded(indexed bytes32,indexed address,uint256,uint256)
+        #   handler: handleBountyAdded
+        # - event: OwnershipRenounced(indexed address)
+        #   handler: handleOwnershipRenounced
+        # - event: OwnershipTransferred(indexed address,indexed address)
+        #   handler: handleOwnershipTransferred
+      file: ./src/mapping.ts
