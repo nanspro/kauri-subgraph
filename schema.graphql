@@ -2,7 +2,7 @@ type Checkpoint @entity {
   id: ID!
   ipfsHash: String!
   merkleRoot: Bytes! # bytes32
-  # contentHash: [String!]
+  contentHash: [String!]!
 }
 
 type Article @entity {
@@ -12,4 +12,13 @@ type Article @entity {
   title: String!
   author: String!
   createdAt: BigInt!
+  tags: [String!]!
+  attributes: Attribute!
+}
+
+type Attribute @entity {
+  id: ID!
+  originName: String
+  originUrl: String
+  background: String
 }
